@@ -1,0 +1,16 @@
+
+%ejemplo de solución para una ecuacion diferencial usando ODE
+clc
+clear all
+%
+n=2.53;
+c=3;
+w=pi;
+r=[0 10]; %intervalo de la solución
+CI=[0 10];%condiciones iniciales: posición velocidad
+[rr,E]=ode45(@fun,r,CI);
+plot(rr,E(:,1))
+%
+function myode=fun(r,E);
+myode=[E(2);-1^2/1^2*pi^2*E(1)];
+end
